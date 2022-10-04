@@ -27,7 +27,7 @@
 <div class="container">
   <div class="one">
     <h1 class="one">
-      Hi, Ayuu
+      Hi, Ayu
      <!--  <span id="name"></span> -->
     </h1>
     <!-- <p class="two" id="greetingText"></p> -->
@@ -40,7 +40,7 @@
   <div class="four">
     <div class="text-box">
       <p class="hbd-chatbox">
-        Selamat Ulang Tahun yaa!! blablablabla 
+        Selamat Ulang Tahun yaa!!  
       </p>
       <p class="fake-btn">Send</p>
     </div>
@@ -69,9 +69,7 @@
     <img src="img/hat.svg" alt="hat" class="hat" />
     <div class="wish">
       <h3 class="wish-hbd">Happy Birthday!</h3>
-      <h5 id="wishText">May Allah SWT always be with you! :)<br>
-        Semoga semakin menjadi orang yang lebih baik lagi, panjang umur, melimpah rezeki, dan 
-        diberikan kesehatan selalu yaaa<h5>
+      <h5 id="wishText">May Allah SWT always be with you! :)<br><h5>
     </div>
   </div>
 
@@ -144,8 +142,13 @@
   </div>
 
   <div class="nine">
+    <p>Sekian, semoga kamu suka :D</p>
+    <p>Doaku untuk kamu Semoga semakin menjadi orang yang lebih baik lagi, panjang umur, melimpah rezeki, dan 
+        diberikan kesehatan selalu</p>
+    <p>Semangat selalu dalam meraih mimpi dan di jalan yang kamu ambil</p>
+    <p>Salam juga untuk keluarga kamu dirumah</p>
    <!--  <p>Okay, now come back and tell me if you liked it.</p> -->
-    <p id="replay">Click Here, if you want to watch it again.</p>
+    <p id="replay"><b>Click Here, if you want to watch it again.</b></p>
     <p class="last-smile">:)</p>
   </div>
 </div>
