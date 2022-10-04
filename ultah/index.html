@@ -27,10 +27,10 @@
 <div class="container">
   <div class="one">
     <h1 class="one">
-      Hi Ayu
-      <span id="name"></span>
+      Hi, Ayuu
+     <!--  <span id="name"></span> -->
     </h1>
-    <p class="two" id="greetingText"></p>
+    <!-- <p class="two" id="greetingText"></p> -->
   </div>
 
   <div class="three">
@@ -40,15 +40,14 @@
   <div class="four">
     <div class="text-box">
       <p class="hbd-chatbox">
-        Selamat Ulang Tahun yaa!! Semoga bisa menjadi orang yang lebih baik lagi, panjang umur, melimpah rezeki, dan 
-        diberikan kesehatan selalu 
+        Selamat Ulang Tahun yaa!! blablablabla 
       </p>
       <p class="fake-btn">Send</p>
     </div>
   </div>
 
   <div class="five">
-    <p class="idea-1">Itu yang mau aku lakukan tadinya.</p>
+    <p class="idea-1">Itu yang mau aku lakukan, tadinya...</p>
     <p class="idea-2">Tapi aku berubah pikiran.</p>
     <p class="idea-3">
       Aku sadar, Bahwa aku ingin melakukan sesuatu yang<br>
@@ -70,7 +69,9 @@
     <img src="img/hat.svg" alt="hat" class="hat" />
     <div class="wish">
       <h3 class="wish-hbd">Happy Birthday!</h3>
-      <h5 id="wishText">May Allah SWT always be with you! ;)<h5>
+      <h5 id="wishText">May Allah SWT always be with you! :)<br>
+        Semoga semakin menjadi orang yang lebih baik lagi, panjang umur, melimpah rezeki, dan 
+        diberikan kesehatan selalu yaaa<h5>
     </div>
   </div>
 
@@ -143,8 +144,8 @@
   </div>
 
   <div class="nine">
-    <p>Okay, now come back and tell me if you liked it.</p>
-    <p id="replay">Or click, if you want to watch it again.</p>
+   <!--  <p>Okay, now come back and tell me if you liked it.</p> -->
+    <p id="replay">Click Here, if you want to watch it again.</p>
     <p class="last-smile">:)</p>
   </div>
 </div>
