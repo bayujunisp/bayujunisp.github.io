@@ -214,7 +214,7 @@
 					<div class="col-md-3 col-xs-3 work">
 						<div class="blog">
 							<div class="blog-img">
-								<img class="img-responsive" src="assets/img/sd.PNG" alt="">
+								<img class="img-responsive" src="assets/img/sd.png" alt="">
 							</div>
 							<div class="blog-content">
 
@@ -229,7 +229,7 @@
 					<div class="col-md-3 col-xs-3 work">
 						<div class="blog">
 							<div class="blog-img">
-								<img class="img-responsive" src="assets/img/cinus.PNG" alt="">
+								<img class="img-responsive" src="assets/img/cinus.png" alt="">
 							</div>
 							<div class="blog-content">
 
@@ -245,7 +245,7 @@
 					<div class="col-md-3 col-xs-3 work">
 						<div class="blog">
 							<div class="blog-img">
-								<img class="img-responsive" src="assets/img/kamvak.PNG" alt="">
+								<img class="img-responsive" src="assets/img/kamvak.png" alt="">
 							</div>
 							<div class="blog-content">
 
@@ -300,7 +300,7 @@
 					<!-- about -->
 					<div class="col-md-6 col-xs-6 work">
 						<div class="blog-img">
-							<img class="img-responsive" src="assets/img/alona.PNG" alt=""  style="float: right;">
+							<img class="img-responsive" src="assets/img/alona.png" alt=""  style="float: right;">
 						</div>
 					</div>
 					<!-- /about -->
@@ -319,7 +319,7 @@
 				<!-- about -->
 				<div class="col-md-6 col-xs-6 work" style="margin-top: 30px;">
 					<div class="blog-img">
-						<img class="img-responsive" src="assets/img/espay.PNG" alt="" width="150px" height="150px" style="float: right;">
+						<img class="img-responsive" src="assets/img/espay.png" alt="" width="150px" height="150px" style="float: right;">
 					</div>
 				</div>
 				<!-- /about -->
@@ -336,7 +336,7 @@
 				<!-- about -->
 					<div class="col-md-6 col-xs-6 work">
 						<div class="blog-img">
-							<img class="img-responsive" src="assets/img/freelance.PNG" alt="" width="150px" height="150px" style="float: right;">
+							<img class="img-responsive" src="assets/img/freelance.png" alt="" width="150px" height="150px" style="float: right;">
 						</div>
 					</div>
 					<!-- /about -->
