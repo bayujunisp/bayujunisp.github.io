@@ -37,162 +37,67 @@
 </head>
 
 <body>
-<!-- Header -->
-<header id="home">
-  <!-- Background Image -->
-  <div class="bg-img" style="background-image: url('assets/img/unsplash1.jpg');">
-    <div class="overlay"></div>
-  </div>
-  <!-- /Background Image -->
+	<!-- Header -->
+	<header id="home">
+		<!-- Background Image -->
+		<div class="bg-img" style="background-image: url('assets/img/unsplash1.jpg');">
+			<div class="overlay"></div>
+		</div>
+		<!-- /Background Image -->
 
-  <!-- Nav -->
-  <nav id="nav" class="navbar nav-transparent">
-    <div class="container">
-
-      
-
-      <!--  Main navigation  -->
-      <ul class="main-nav nav navbar-nav navbar-left">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#portofolio">Portofolio</a></li>
-       
-        <li><a href="#footer">Contact</a></li>
-
-      </ul>
-      <!-- /Main navigation -->
-
-    </div>
-  </nav>
-  <!-- /Nav -->
-
-  <!-- home wrapper -->
-  <div class="home-wrapper">
-    <div class="container">
-      <div class="row">
-
-        <!-- home content -->
-        <div class="col-md-10 col-md-offset-1">
-          <div class="home-content">
-            <h1 class="white-text">Welcome</h1>
-            <h3 class="white-text">Bayu Junis Pribadi Profile Website</h3>
-
-          <a href="#about" class="white-btn">Get Started</a>
+		<!-- Nav -->
+		<nav id="nav" class="navbar nav-transparent">
+			<div class="container">
 
 
 
+				<!--  Main navigation  -->
+				<ul class="main-nav nav navbar-nav navbar-left">
+					<li><a href="#home">Home</a></li>
+					<li><a href="#about">About</a></li>
+					<li><a href="#skills">Skills</a></li>
+					<li><a href="#education">Education</a></li>
+					<li><a href="#experience">Experience</a></li>
+					<li><a href="#portofolio">Portofolio</a></li>
 
-          </div>
-        </div>
-        <!-- /home content -->
+					<li><a href="#footer">Contact</a></li>
 
-      </div>
-    </div>
-  </div>
-  <!-- /home wrapper -->
+				</ul>
+				<!-- /Main navigation -->
 
-</header>
-<!-- /Header -->
-<div id="about" class="section md-padding">
+			</div>
+		</nav>
+		<!-- /Nav -->
 
-  <!-- Container -->
-  <div class="container">
+		<!-- home wrapper -->
+		<div class="home-wrapper">
+			<div class="container">
+				<div class="row">
 
-    <!-- Row -->
-    <div class="row">
+					<!-- home content -->
+					<div class="col-md-10 col-md-offset-1">
+						<div class="home-content">
+							<h1 class="white-text">Welcome</h1>
+							<h3 class="white-text">Bayu Junis Pribadi Profile Website</h3>
 
-      <!-- Section header -->
-      <div class="section-header text-center">
-        <h2 class="title">About Me</h2>
-      </div>
-      <!-- /Section header -->
-
-      <!-- about -->
-      <div class="col-md-6 col-xs-6 work">
-      	<img src="assets/img/bayu.jpeg" width="100%" height="100%">
-      </div>
-      <!-- /about -->
-
-      <div class="col-md-6 col-xs-6 work">
-
-      	<p style="text-align: justify; margin-top: 200px;">Bayu Junis Pribadi (Lahir Jakarta, 07 Juni 1998) merupakan seorang Mahasiswa Jurusan Ilmu Komputer di Fakultas Matematika Dan Ilmu Pengetahuan Alam, Universitas Pakuan yang saat ini sedang melangsungkan jenjang pendidikan S1. Minatnya Terhadap dunia IT mendoronya untuk melanjutkan studi S1 ke luar kota</p>
-      </div>
-
-    </div>
-    <!-- /Row -->
-
-  </div>
-  <!-- /Container -->
-
-</div>
-
-<!-- /About -->
-<div id="skills" class="section md-padding">
-
-  <!-- Container -->
-  <div class="container">
-
-    <!-- Row -->
-    <!-- <div class="row"> -->
-
-      <!-- Section header -->
-      <div class="section-header text-center">
-        <h2 class="title">Skills</h2>
-      </div>
-    
-<div id="skills">
-	<div class="content">
-<div class="row" style="margin-top: 20px;">
-		<div class="col-xs-1">MYSQL</div>
-		<div class="col-xs-1">:</div>
-		<div class="col-xs-9"><div class="kotak"><div class="mysql"></div></div></div>
-		<div class="col-xs-1">100%</div>
-		
-	</div>
-	<div class="row" style="margin-top: 20px;">
-		<div class="col-xs-1">HTML</div>
-		<div class="col-xs-1">:</div>
-		<div class="col-xs-9"><div class="kotak"><div class="html"></div></div></div>
-		<div class="col-xs-1">100%</div>
-		
-	</div>
-	<div class="row" style="margin-top: 20px;">
-		<div class="col-xs-1">css</div>
-		<div class="col-xs-1">:</div>
-		<div class="col-xs-9"><div class="kotak"><div class="css"></div></div></div>
-		<div class="col-xs-1">100%</div>
-		
-	</div>
-	<div class="row" style="margin-top: 20px;">
-		<div class="col-xs-1">PHP</div>
-		<div class="col-xs-1">:</div>
-		<div class="col-xs-9"><div class="kotak"><div class="php"></div></div></div>
-		<div class="col-xs-1">80%</div>
-		
-	</div>
-	<div class="row" style="margin-top: 20px;">
-		<div class="col-xs-1">Javascript</div>
-		<div class="col-xs-1">:</div>
-		<div class="col-xs-9"><div class="kotak"><div class="js"></div></div></div>
-		<div class="col-xs-1">30%</div>
-		
-	</div>
-	
-	</div>
-</div>
+							<a href="#about" class="white-btn">Get Started</a>
+							<a href="assets/img/CV - Bayu Junis Pribadi - IT.pdf" download="CV - Bayu Junis Pribadi - IT" class="white-btn">Download My CV</a>
 
 
 
-  </div>
-  <!-- /Container -->
 
-</div>
-<!-- /About -->
+						</div>
+					</div>
+					<!-- /home content -->
 
-	<!-- Blog -->
-	<div id="education" class="section md-padding bg-grey">
+				</div>
+			</div>
+		</div>
+		<!-- /home wrapper -->
+
+	</header>
+	<!-- /Header -->
+	<div id="about" class="section md-padding">
 
 		<!-- Container -->
 		<div class="container">
@@ -202,73 +107,22 @@
 
 				<!-- Section header -->
 				<div class="section-header text-center">
-					<h2 class="title">Education</h2>
+					<h2 class="title">About Me</h2>
 				</div>
 				<!-- /Section header -->
 
-				<!-- blog -->
-				<div class="col-md-3 col-xs-3 work">
-					<div class="blog">
-						<div class="blog-img">
-							<img class="img-responsive" src="assets/img/sd.PNG" alt="">
-						</div>
-						<div class="blog-content">
-							
-							<h3>SDS Sekar Adi</h3>
-							<p>2004 - 2010.</p>
-							<p></p>
-						</div>
-					</div>
+				<!-- about -->
+				<div class="col-md-6 col-xs-6 work">
+					<img src="assets/img/bayu.jpeg" width="100%" height="100%">
 				</div>
-				<!-- /blog -->
-				<!-- blog -->
-				<div class="col-md-3 col-xs-3 work">
-					<div class="blog">
-						<div class="blog-img">
-							<img class="img-responsive" src="assets/img/cinus.PNG" alt="">
-						</div>
-						<div class="blog-content">
-							
-							<h3>SMP Citra Nusa</h3>
-							<p>2010 - 2013.</p>
-							<p></p>
-							
-						</div>
-					</div>
-				</div>
-				<!-- /blog -->
-				<!-- blog -->
-				<div class="col-md-3 col-xs-3 work">
-					<div class="blog">
-						<div class="blog-img">
-							<img class="img-responsive" src="assets/img/kamvak.PNG" alt="">
-						</div>
-						<div class="blog-content">
-							
-							<h3>SMKN 1 Cibinong</h3>
-							<p>Software Engineering Class.</p>
-							<p>2013 - 2016.</p>
-							
-						</div>
-					</div>
-				</div>
-				<!-- /blog -->
+				<!-- /about -->
 
-				<!-- blog -->
-				<div class="col-md-3 col-xs-3 work">
-					<div class="blog">
-						<div class="blog-img">
-							<img class="img-responsive"  src="assets/img/univ.jpg" alt="">
-						</div>
-						<div class="blog-content">
-							
-							<h3>Universitas Pakuan</h3>
-							<p>Computer Science.</p>
-							<p>2016 - Now.</p>
-						</div>
-					</div>
+				<div class="col-md-6 col-xs-6 work">
+
+					<!-- <p style="text-align: justify; margin-top: 200px;">Bayu Junis Pribadi (Lahir Jakarta, 07 Juni 1998) merupakan seorang Mahasiswa Jurusan Ilmu Komputer di Fakultas Matematika Dan Ilmu Pengetahuan Alam, Universitas Pakuan yang saat ini sedang melangsungkan jenjang pendidikan S1. Minatnya Terhadap dunia IT mendoronya untuk melanjutkan studi S1 ke luar kota</p> -->
+
+					<p style="text-align: justify; margin-top: 200px;">Bayu Junis Pribadi, Experienced of working in the computer software industry. Skilled in Software Programming,Testing, and Analyst, Strong engineering professional with a Bachelor's degree focused in Computer Science from Universitas Pakuan.</p>
 				</div>
-				<!-- /blog -->
 
 			</div>
 			<!-- /Row -->
@@ -277,63 +131,290 @@
 		<!-- /Container -->
 
 	</div>
-	<!-- /Blog -->
+
+	<!-- /About -->
+	<div id="skills" class="section md-padding">
+
+		<!-- Container -->
+		<div class="container">
+
+			<!-- Row -->
+			<!-- <div class="row"> -->
+
+				<!-- Section header -->
+				<div class="section-header text-center">
+					<h2 class="title">Skills</h2>
+				</div>
+
+				<div id="skills">
+					<div class="content">
+						<div class="row" style="margin-top: 20px;">
+							<div class="col-xs-1">Software Testing</div>
+							<div class="col-xs-1">:</div>
+							<div class="col-xs-9"><div class="kotak"><div class="mysql"></div></div></div>
+							<div class="col-xs-1">100%</div>
+
+						</div>
+						<div class="row" style="margin-top: 20px;">
+							<div class="col-xs-1">Database</div>
+							<div class="col-xs-1">:</div>
+							<div class="col-xs-9"><div class="kotak"><div class="html"></div></div></div>
+							<div class="col-xs-1">100%</div>
+
+						</div>
+						<div class="row" style="margin-top: 20px;">
+							<div class="col-xs-1">Web Programming</div>
+							<div class="col-xs-1">:</div>
+							<div class="col-xs-9"><div class="kotak"><div class="css"></div></div></div>
+							<div class="col-xs-1">100%</div>
+
+						</div>
+						<div class="row" style="margin-top: 20px;">
+							<div class="col-xs-1">Java</div>
+							<div class="col-xs-1">:</div>
+							<div class="col-xs-9"><div class="kotak"><div class="php"></div></div></div>
+							<div class="col-xs-1">60%</div>
+
+						</div>
+						<div class="row" style="margin-top: 20px;">
+							<div class="col-xs-1">CI/CD</div>
+							<div class="col-xs-1">:</div>
+							<div class="col-xs-9"><div class="kotak"><div class="js"></div></div></div>
+							<div class="col-xs-1">30%</div>
+
+						</div>
+
+					</div>
+				</div>
 
 
-<div id="portofolio" class="section md-padding">
 
-  <!-- Container -->
-  <div class="container">
+			</div>
+			<!-- /Container -->
 
-    <!-- Row -->
-    <div class="row">
+		</div>
+		<!-- /About -->
 
-      <!-- Section header -->
-      <div class="section-header text-center">
-        <h2 class="title">Portofolio</h2>
-      </div>
-      <!-- /Section header -->
+		<!-- Blog -->
+		<div id="education" class="section md-padding bg-grey">
 
-      <!-- Work -->
-      <div class="col-md-6 col-xs-6 work">
-        <img class="img-responsive" src="assets/img/smapesat.PNG" alt="">
-        <div class="overlay"></div>
-        <div class="work-content">
-          <span>smapesat.sch.id</span>
-          <h3>Profile Website Sekolah</h3>
-          <div class="work-link">
-            <a href="https://mapesat.sch.id/" title="Visit"><i class="fa fa-binoculars"></i></a>
-            <a class="lightbox" href="assets/img/smapesat.PNG" title="See Picture"><i class="fa fa-image"></i></a>
-          </div>
-        </div>
-      </div>
-      <!-- /Work -->
+			<!-- Container -->
+			<div class="container">
 
-      <!-- Work -->
-      <div class="col-md-6 col-xs-6 work">
-        <img class="img-responsive" src="assets/img/berbolui.PNG" alt="">
-        <div class="overlay"></div>
-        <div class="work-content">
-          <span>Berbol.com</span>
-          <h3>Website Berita Bola</h3>
-          <div class="work-link">
-            <a href="https://berbol.000webhostapp.com/" title="Visit"><i class="fa fa-binoculars"></i></a>
-            <a class="lightbox" href="assets/img/berbolui.PNG" title="See Picture"><i class="fa fa-image"></i></a>
-          </div>
-        </div>
-      </div>
-      <!-- /Work -->
+				<!-- Row -->
+				<div class="row">
 
-      
+					<!-- Section header -->
+					<div class="section-header text-center">
+						<h2 class="title">Education</h2>
+					</div>
+					<!-- /Section header -->
 
-      
-    </div>
-    <!-- /Row -->
+					<!-- blog -->
+					<div class="col-md-3 col-xs-3 work">
+						<div class="blog">
+							<div class="blog-img">
+								<img class="img-responsive" src="assets/img/sd.PNG" alt="">
+							</div>
+							<div class="blog-content">
 
-  </div>
-  <!-- /Container -->
+								<h3>SDS Sekar Adi</h3>
+								<p>2004 - 2010.</p>
+								<p></p>
+							</div>
+						</div>
+					</div>
+					<!-- /blog -->
+					<!-- blog -->
+					<div class="col-md-3 col-xs-3 work">
+						<div class="blog">
+							<div class="blog-img">
+								<img class="img-responsive" src="assets/img/cinus.PNG" alt="">
+							</div>
+							<div class="blog-content">
 
-</div>
+								<h3>SMP Citra Nusa</h3>
+								<p>2010 - 2013.</p>
+								<p></p>
+
+							</div>
+						</div>
+					</div>
+					<!-- /blog -->
+					<!-- blog -->
+					<div class="col-md-3 col-xs-3 work">
+						<div class="blog">
+							<div class="blog-img">
+								<img class="img-responsive" src="assets/img/kamvak.PNG" alt="">
+							</div>
+							<div class="blog-content">
+
+								<h3>SMKN 1 Cibinong</h3>
+								<p>Software Engineering Class.</p>
+								<p>2013 - 2016.</p>
+
+							</div>
+						</div>
+					</div>
+					<!-- /blog -->
+
+					<!-- blog -->
+					<div class="col-md-3 col-xs-3 work">
+						<div class="blog">
+							<div class="blog-img">
+								<img class="img-responsive"  src="assets/img/univ.jpg" alt="">
+							</div>
+							<div class="blog-content">
+
+								<h3>Universitas Pakuan</h3>
+								<p>Computer Science.</p>
+								<p>2016 - Now.</p>
+							</div>
+						</div>
+					</div>
+					<!-- /blog -->
+
+				</div>
+				<!-- /Row -->
+
+			</div>
+			<!-- /Container -->
+
+		</div>
+		<!-- /Blog -->
+
+		<div id="experience" class="section md-padding">
+
+			<!-- Container -->
+			<div class="container">
+
+				<!-- Section header -->
+				<div class="section-header text-center">
+					<h2 class="title">Experience</h2>
+				</div>
+				<!-- /Section header -->
+
+				<!-- Row -->
+				<div class="row">  
+
+					<!-- about -->
+					<div class="col-md-6 col-xs-6 work">
+						<div class="blog-img">
+							<img class="img-responsive" src="assets/img/alona.PNG" alt=""  style="float: right;">
+						</div>
+					</div>
+					<!-- /about -->
+
+					<div class="col-md-6 col-xs-6 work"  style="margin-top: 40px;">
+						<div class="blog-content">
+							
+							<h3>PT Alona Indonesia Raya</h3>
+							<p>Software Quality Assurance</p>
+							<p>October 2020 - June 2022</p>
+						</div>
+						<p></p>
+					</div>
+
+		
+				<!-- about -->
+				<div class="col-md-6 col-xs-6 work" style="margin-top: 30px;">
+					<div class="blog-img">
+						<img class="img-responsive" src="assets/img/espay.PNG" alt="" width="150px" height="150px" style="float: right;">
+					</div>
+				</div>
+				<!-- /about -->
+
+				<div class="col-md-6 col-xs-6 work">
+					<div class="blog-content">
+
+						<h3>Espay</h3>
+						<p>Software Quality Assurance</p>
+						<p>July 2022 - Present</p>
+					</div>
+					<p></p>
+				</div>
+				<!-- about -->
+					<div class="col-md-6 col-xs-6 work">
+						<div class="blog-img">
+							<img class="img-responsive" src="assets/img/freelance.PNG" alt="" width="150px" height="150px" style="float: right;">
+						</div>
+					</div>
+					<!-- /about -->
+
+					<div class="col-md-6 col-xs-6 work" style="margin-top: 20px;">
+						<div class="blog-content">
+							
+							<h3>Self Employed</h3>
+							<p>Freelance Web Developer</p>
+							<p>Agustus 2019 - Present</p>
+						</div>
+						<p></p>
+					</div>
+
+				
+
+			</div>
+			<!-- /Row -->
+
+		</div>
+		<!-- /Container -->
+
+	</div>
+
+	<div id="portofolio" class="section md-padding">
+
+		<!-- Container -->
+		<div class="container">
+
+			<!-- Row -->
+			<div class="row">
+
+				<!-- Section header -->
+				<div class="section-header text-center">
+					<h2 class="title">Portofolio</h2>
+				</div>
+				<!-- /Section header -->
+
+				<!-- Work -->
+				<div class="col-md-6 col-xs-6 work">
+					<img class="img-responsive" src="assets/img/smapesat.PNG" alt="">
+					<div class="overlay"></div>
+					<div class="work-content">
+						<span>smapesat.sch.id</span>
+						<h3>Profile Website Sekolah</h3>
+						<div class="work-link">
+							<a href="https://mapesat.sch.id/" title="Visit"><i class="fa fa-binoculars"></i></a>
+							<a class="lightbox" href="assets/img/smapesat.PNG" title="See Picture"><i class="fa fa-image"></i></a>
+						</div>
+					</div>
+				</div>
+				<!-- /Work -->
+
+				<!-- Work -->
+				<div class="col-md-6 col-xs-6 work">
+					<img class="img-responsive" src="assets/img/berbolui.PNG" alt="">
+					<div class="overlay"></div>
+					<div class="work-content">
+						<span>Berbol.com</span>
+						<h3>Website Berita Bola</h3>
+						<div class="work-link">
+							<a href="https://berbol.000webhostapp.com/" title="Visit"><i class="fa fa-binoculars"></i></a>
+							<a class="lightbox" href="assets/img/berbolui.PNG" title="See Picture"><i class="fa fa-image"></i></a>
+						</div>
+					</div>
+				</div>
+				<!-- /Work -->
+
+
+
+
+			</div>
+			<!-- /Row -->
+
+		</div>
+		<!-- /Container -->
+
+	</div>
 
 
 
@@ -384,7 +465,7 @@
 
 	<!-- Back to top -->
 	<div id="back-to-top" title="Go To Top"><i class="fa fa-chevron-up" aria-hidden="true"></i>
-</div>
+	</div>
 	<!-- /Back to top -->
 
 	<!-- Preloader -->
@@ -413,23 +494,23 @@
 
 	<script type="text/javascript">
 
-  $(document).ready(function() {
+		$(document).ready(function() {
   	// get current URL path and assign 'active' class
   	var pathname = window.location.pathname;
   	$('li > a[href="'+pathname+'"]').parent().addClass('active');
   })
 
-  $(function() {
-     $("li").click(function() {
+		$(function() {
+			$("li").click(function() {
         // remove classes from all
         $("li").removeClass("active");
         // add class to the one we clicked
         $(this).addClass("active");
-     });
-  });
+    });
+		});
 
 
-  </script>
+	</script>
 	
 
 
