@@ -140,6 +140,7 @@
       <circle cx="20" cy="20" r="20" />
     </svg>
   </div>
+  
 
   <div class="nine">
     <p>Sekian, semoga kamu suka :D</p>
