@@ -81,10 +81,8 @@
 							<h3 class="white-text">Bayu Junis Pribadi Profile Website</h3>
 
 							<a href="#about" class="white-btn">Get Started</a>
-							<a href="assets/img/CV - Bayu Junis Pribadi - IT.pdf" download="CV - Bayu Junis Pribadi - IT" class="white-btn">Download My CV</a>
-
-
-
+							<a href="assets/img/CV - Bayu Junis Pribadi - IT.pdf" download="CV - Bayu Junis Pribadi - IT" class="white-btn">Download My CV</a><br>
+							<h2><a href="https://github.com/bayujunisp" class="white-btn"><i class="fa fa-github"></i></a></h2>
 
 						</div>
 					</div>
@@ -133,7 +131,7 @@
 	</div>
 
 	<!-- /About -->
-	<div id="skills" class="section md-padding">
+	<div id="skills" class="section md-padding bg-grey">
 
 		<!-- Container -->
 		<div class="container">
@@ -196,7 +194,7 @@
 		<!-- /About -->
 
 		<!-- Blog -->
-		<div id="education" class="section md-padding bg-grey">
+		<div id="education" class="section md-padding">
 
 			<!-- Container -->
 			<div class="container">
@@ -283,7 +281,7 @@
 		</div>
 		<!-- /Blog -->
 
-		<div id="experience" class="section md-padding">
+		<div id="experience" class="section md-padding bg-grey">
 
 			<!-- Container -->
 			<div class="container">
@@ -383,7 +381,7 @@
 						<span>smapesat.sch.id</span>
 						<h3>Profile Website Sekolah</h3>
 						<div class="work-link">
-							<a href="https://mapesat.sch.id/" title="Visit"><i class="fa fa-binoculars"></i></a>
+							<a href="https://smapesat.sch.id/" title="Visit"><i class="fa fa-binoculars"></i></a>
 							<a class="lightbox" href="assets/img/smapesat.PNG" title="See Picture"><i class="fa fa-image"></i></a>
 						</div>
 					</div>
@@ -400,6 +398,46 @@
 						<div class="work-link">
 							<a href="https://berbol.000webhostapp.com/" title="Visit"><i class="fa fa-binoculars"></i></a>
 							<a class="lightbox" href="assets/img/berbolui.PNG" title="See Picture"><i class="fa fa-image"></i></a>
+						</div>
+					</div>
+				</div>
+				<!-- /Work -->
+
+
+
+
+			</div>
+			<!-- /Row -->
+
+			<!-- Row -->
+			<div class="row">
+
+
+				<!-- Work -->
+				<div class="col-md-6 col-xs-6 work">
+					<img class="img-responsive" src="assets/img/improvedknn.PNG" alt="">
+					<div class="overlay"></div>
+					<div class="work-content">
+						<span>improvedknn.000webhostapp.com</span>
+						<h3>Aplikasi Analisis Sentimen Metode Improved-KNN </h3>
+						<div class="work-link">
+							<a href="https://improvedknn.000webhostapp.com/" title="Visit"><i class="fa fa-binoculars"></i></a>
+							<a class="lightbox" href="assets/img/improvedknn.PNG" title="See Picture"><i class="fa fa-image"></i></a>
+						</div>
+					</div>
+				</div>
+				<!-- /Work -->
+
+				<!-- Work -->
+				<div class="col-md-6 col-xs-6 work">
+					<img class="img-responsive" src="assets/img/locationpuskesmas.PNG" alt="">
+					<div class="overlay"></div>
+					<div class="work-content">
+						<span>puskesmasbogor.000webhostapp.com</span>
+						<h3>Website Info Puskesmas Bogor</h3>
+						<div class="work-link">
+							<a href="https://puskesmasbogor.000webhostapp.com/" title="Visit"><i class="fa fa-binoculars"></i></a>
+							<a class="lightbox" href="assets/img/locationpuskesmas.PNG" title="See Picture"><i class="fa fa-image"></i></a>
 						</div>
 					</div>
 				</div>
