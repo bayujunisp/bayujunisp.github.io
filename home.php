@@ -95,7 +95,7 @@
 
 	</header>
 	<!-- /Header -->
-	<div id="about" class="section md-padding">
+	<div id="about" class="section md-padding bg-grey">
 
 		<!-- Container -->
 		<div class="container">
@@ -131,7 +131,7 @@
 	</div>
 
 	<!-- /About -->
-	<div id="skills" class="section md-padding bg-grey">
+	<div id="skills" class="section md-padding">
 
 		<!-- Container -->
 		<div class="container">
@@ -192,6 +192,86 @@
 
 		</div>
 		<!-- /About -->
+
+
+		<div id="experience" class="section md-padding bg-grey">
+
+			<!-- Container -->
+			<div class="container">
+
+				<!-- Section header -->
+				<div class="section-header text-center">
+					<h2 class="title">Experience</h2>
+				</div>
+				<!-- /Section header -->
+
+				<!-- Row -->
+				<div class="row">  
+
+					<!-- about -->
+					<div class="col-md-6 col-xs-6 work">
+						<div class="blog-img">
+							<img class="img-responsive" src="assets/img/alona.png" alt=""  style="float: right;">
+						</div>
+					</div>
+					<!-- /about -->
+
+					<div class="col-md-6 col-xs-6 work"  style="margin-top: 40px;">
+						<div class="blog-content">
+							
+							<h3>PT Alona Indonesia Raya</h3>
+							<p>Software Quality Assurance</p>
+							<p>October 2020 - June 2022</p>
+						</div>
+						<p></p>
+					</div>
+
+		
+				<!-- about -->
+				<div class="col-md-6 col-xs-6 work" style="margin-top: 30px;">
+					<div class="blog-img">
+						<img class="img-responsive" src="assets/img/espay.png" alt="" width="150px" height="150px" style="float: right;">
+					</div>
+				</div>
+				<!-- /about -->
+
+				<div class="col-md-6 col-xs-6 work">
+					<div class="blog-content">
+
+						<h3>Espay</h3>
+						<p>Software Quality Assurance</p>
+						<p>July 2022 - Present</p>
+					</div>
+					<p></p>
+				</div>
+				<!-- about -->
+					<div class="col-md-6 col-xs-6 work">
+						<div class="blog-img">
+							<img class="img-responsive" src="assets/img/freelance.png" alt="" width="150px" height="150px" style="float: right;">
+						</div>
+					</div>
+					<!-- /about -->
+
+					<div class="col-md-6 col-xs-6 work" style="margin-top: 20px;">
+						<div class="blog-content">
+							
+							<h3>Self Employed</h3>
+							<p>Freelance Web Developer</p>
+							<p>Agustus 2019 - Present</p>
+						</div>
+						<p></p>
+					</div>
+
+				
+
+			</div>
+			<!-- /Row -->
+
+		</div>
+		<!-- /Container -->
+
+	</div>
+
 
 		<!-- Blog -->
 		<div id="education" class="section md-padding">
@@ -281,85 +361,7 @@
 		</div>
 		<!-- /Blog -->
 
-		<div id="experience" class="section md-padding bg-grey">
-
-			<!-- Container -->
-			<div class="container">
-
-				<!-- Section header -->
-				<div class="section-header text-center">
-					<h2 class="title">Experience</h2>
-				</div>
-				<!-- /Section header -->
-
-				<!-- Row -->
-				<div class="row">  
-
-					<!-- about -->
-					<div class="col-md-6 col-xs-6 work">
-						<div class="blog-img">
-							<img class="img-responsive" src="assets/img/alona.png" alt=""  style="float: right;">
-						</div>
-					</div>
-					<!-- /about -->
-
-					<div class="col-md-6 col-xs-6 work"  style="margin-top: 40px;">
-						<div class="blog-content">
-							
-							<h3>PT Alona Indonesia Raya</h3>
-							<p>Software Quality Assurance</p>
-							<p>October 2020 - June 2022</p>
-						</div>
-						<p></p>
-					</div>
-
-		
-				<!-- about -->
-				<div class="col-md-6 col-xs-6 work" style="margin-top: 30px;">
-					<div class="blog-img">
-						<img class="img-responsive" src="assets/img/espay.png" alt="" width="150px" height="150px" style="float: right;">
-					</div>
-				</div>
-				<!-- /about -->
-
-				<div class="col-md-6 col-xs-6 work">
-					<div class="blog-content">
-
-						<h3>Espay</h3>
-						<p>Software Quality Assurance</p>
-						<p>July 2022 - Present</p>
-					</div>
-					<p></p>
-				</div>
-				<!-- about -->
-					<div class="col-md-6 col-xs-6 work">
-						<div class="blog-img">
-							<img class="img-responsive" src="assets/img/freelance.png" alt="" width="150px" height="150px" style="float: right;">
-						</div>
-					</div>
-					<!-- /about -->
-
-					<div class="col-md-6 col-xs-6 work" style="margin-top: 20px;">
-						<div class="blog-content">
-							
-							<h3>Self Employed</h3>
-							<p>Freelance Web Developer</p>
-							<p>Agustus 2019 - Present</p>
-						</div>
-						<p></p>
-					</div>
-
-				
-
-			</div>
-			<!-- /Row -->
-
-		</div>
-		<!-- /Container -->
-
-	</div>
-
-	<div id="portofolio" class="section md-padding">
+	<div id="portofolio" class="section md-padding bg-grey">
 
 		<!-- Container -->
 		<div class="container">
