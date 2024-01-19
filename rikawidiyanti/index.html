@@ -69,13 +69,12 @@
      --><p class="idea-3">
       You're amazing and i <strong>♥</strong> You<br>
     </p>
-    <!-- <p class="idea-4">You're Pretty Just The Way You Are</p> -->
+   <!--  <p class="idea-4">You're Pretty Just The Way You Are</p> -->
     <p class="idea-5">
        Dunia Ini Memiliki Banyak Orang Hebat Kamu Salah Satunya <span>:)</span>
     </p>
     <!-- <p class="idea-6">
-      me + you = <img src="img/heart300.svg" alt="" /><br> 
-      me - you = <b>:(</b>  
+     <span>You're Pretty Just The Way You Are </span> 
     </p> -->
   </div>
 
@@ -160,7 +159,7 @@
     <p style="font-weight: bold;">My Message For You</p>
     <p>Jaga kesehatan badan(Lagi Musimnya sakit) dan juga mental</p>
     <p>Semangat selalu dalam meraih mimpi dan di jalan yang kamu ambil</p>
-    <p>Kabarin Aku Kalo Perlu Apapun</p>
+    <p>Hubungi Aku Kalo Perlu Apapun</p>
     <br>
     <p id="replay">Click <a href="../rikawidiyantidate"><b>Here</b></a> For My Next Move </p>
     <p class="last-smile">:3</p>
