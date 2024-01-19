@@ -30,7 +30,7 @@
       Hi, Rika
      <!--  <span id="name"></span> -->
     </h1>
-    <p class="two" id="greetingText">Did You Know...</p>
+    <p class="two" id="greetingText">This Is For You</p>
   </div>
 
   <div class="three">
