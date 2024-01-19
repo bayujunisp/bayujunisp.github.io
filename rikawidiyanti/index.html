@@ -34,7 +34,7 @@
   </div>
 
   <div class="three">
-    <img src="img/sempurna.jpeg" style="margin-left: auto;margin-right: auto;width: 17%; height: 17%">
+    <img src="img/Sempurna.jpeg" style="margin-left: auto;margin-right: auto;width: 17%; height: 17%">
     <h4 style="margin:0px;">Perfect Like You</h4>
   </div>
 
