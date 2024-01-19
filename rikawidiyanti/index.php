@@ -34,7 +34,7 @@
   </div>
 
   <div class="three">
-    <img src="img/Sempurna.jpeg" style="margin-left: auto;margin-right: auto;width: 17%; height: 17%">
+    <img src="img/Sempurna.jpeg" class="sempurna">
     <h4 style="margin:0px;">Perfect Like You</h4>
   </div>
 
@@ -48,12 +48,12 @@
   </div>
 
    <div class="threepointone">
-    <img src="img/lampu.png" style="margin-left: auto;margin-right: auto;width: 17%; height: 17%">
+    <img src="img/lampu.png" class="sempurna">
     <h4 style="margin:0px;">You Are The Light Of My Life</h4>
   </div>
 
    <div class="threepointwo">
-    <img src="img/beat.png" style="margin-left: auto;margin-right: auto;width: 17%; height: 17%">
+    <img src="img/beat.png" class="sempurna">
     <h4 style="margin:0px;"> My Heart Beats Because Of You</h4>
   </div>
 

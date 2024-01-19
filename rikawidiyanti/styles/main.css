@@ -114,6 +114,12 @@ body {
   top: -35%;
   width: 80px;
 }
+.sempurna{
+  margin-left: auto;
+  margin-right: auto;
+  width: 17%; 
+  height: auto;
+}
 
 .baloons img {
   display: inline-block;
@@ -226,32 +232,37 @@ body {
 
 /* Media Queries */
 @media screen and (max-height: 1000px) {
-  .six .hat {
+  .six .hat .sempurna {
     left: 40%;
   }
 }
 
 @media screen and (max-height: 800px) {
-  .six .hat {
+  .six .hat .sempurna {
     left: 37%;
   }
 }
 
 @media screen and (max-height: 700px) {
-  .six .hat {
+  .six .hat .sempurna {
     left: 32%;
   }
 }
 
 @media screen and (max-height: 850px) and (max-width: 450px) {
-  .six .hat {
+  .six .hat .sempurna {
     left: 32%;
   }
+
 }
 
 @media screen and (max-width: 500px) {
-  .container {
+  .container  {
     width: 90%;
+  }
+
+  .sempurna {
+    width: 60%;
   }
 
   .four .text-box {
@@ -289,3 +300,4 @@ body {
     font-weight: lighter;
   }
 }
+
