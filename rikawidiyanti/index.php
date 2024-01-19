@@ -155,13 +155,13 @@
     </svg>
   </div>
 
-  <div class="nine">
+  <div class="nine" style="margin-top: -100px;">
     <p style="font-weight: bold;">My Message For You</p>
     <p>Jaga kesehatan badan(Lagi Musimnya sakit) dan juga mental</p>
     <p>Semangat selalu dalam meraih mimpi dan di jalan yang kamu ambil</p>
     <p>Hubungi Aku Kalo Perlu Apapun</p>
-    <br>
-    <p id="replay">Click <a href="../rikawidiyantidate"><b>Here</b></a> For My Next Move </p>
+    <br><p>I'm <b>Proud</b> Of You, Keep Going Yaa! Dan Jangan Lupa Senyum :)</p><br>
+    <p id="replay">Click <a href="../rikawidiyantidate"><b>Here</b></a> For My Next Move</p>
     <p class="last-smile">:3</p>
   </div>
 </div>
