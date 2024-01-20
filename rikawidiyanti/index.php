@@ -47,20 +47,28 @@
     </div>
   </div>
 
+  <div class="threepointzero">
+    <img src="img/mirror.svg" class="sempurna">
+    <h4 style="margin:0px;">I Would've Showed You Something Beautiful, But I Guess You Already Seen Yourself In The Mirror</h4>
+  </div>
+
    <div class="threepointone">
-    <img src="img/lampu.png" class="sempurna">
-    <h4 style="margin:0px;">You Are The Light Of My Life</h4>
+    <img src="img/beat.png" class="sempurna">
+    <h4 style="margin:0px;"> My Heart Beats Because Of You</h4>
+    
   </div>
 
    <div class="threepointwo">
-    <img src="img/beat.png" class="sempurna">
-    <h4 style="margin:0px;"> My Heart Beats Because Of You</h4>
+    <img src="img/lampu.png" class="sempurna">
+    <h4 style="margin:0px;">You Are The Light Of My Life</h4>
   </div>
 
   <div class="threepointthree">
     me + you = <b>♥</b><br> 
     me - you = <b>:(</b>   
   </div>
+
+
 
 
   <div class="five">
@@ -71,7 +79,7 @@
     </p>
    <!--  <p class="idea-4">You're Pretty Just The Way You Are</p> -->
     <p class="idea-5">
-       Dunia Ini Memiliki Banyak Orang Hebat Kamu Salah Satunya <span>:)</span>
+       Dunia Ini Memiliki Banyak Orang Hebat, Kamu Salah Satunya <span>:)</span>
     </p>
     <!-- <p class="idea-6">
      <span>You're Pretty Just The Way You Are </span> 
@@ -82,7 +90,7 @@
    <!--  <img src="./img/ayu.jpg" alt="profile" class="profile-picture" id="imagePath"/>
     <img src="img/hat.svg" alt="hat" class="hat" /> -->
     <div class="wish">
-      <h3 class="wish-hbd">Thank You For Being Born In This World</h3>
+      <h3 class="wish-hbd">Thank You For Being Born Into This World</h3>
       <h5 id="wishText">This world is full of coincidences, and the coincidence I am most grateful for is meeting you<br><h5>
     </div>
   </div>

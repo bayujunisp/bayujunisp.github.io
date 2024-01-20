@@ -77,6 +77,18 @@
         },
       "-=1")
 
+      .from(".threepointzero", 0.7, {
+        opacity: 0,
+        y: 10
+      })
+      .to(".threepointzero",
+        0.7,
+        {
+          opacity: 0,
+          y: 10
+        },
+      "+=3")
+
       .from(".three", 0.7, {
         opacity: 0,
         y: 10
