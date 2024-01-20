@@ -13,6 +13,7 @@
         </div>
         <div class="popup" id="popup">
             <p>Aww, thank you!</p>
+            <p>Click <a href="../rikawidiyanti"><b>Here</b></a> To Replay</p>
         </div>
     </div>
     <script src="question.js"></script>
