@@ -12,7 +12,7 @@
             <button id="yes-btn">Yes</button>
         </div>
         <div class="popup" id="popup">
-            <p>Aww, thank you!</p>
+            <p>Aww thannk you! <br> Tolong kabari ya ada waktu kosong kapan</p>
             <p>Click <a href="../rikawidiyanti"><b>Here</b></a> To Replay</p>
         </div>
     </div>
