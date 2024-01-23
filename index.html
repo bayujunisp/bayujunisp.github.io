@@ -81,7 +81,7 @@
 							<h3 class="white-text">Bayu Junis Pribadi Profile Website</h3>
 
 							<a href="#about" class="white-btn">Get Started</a>
-							<a href="assets/img/CV - Bayu Junis Pribadi - IT.pdf" download="CV - Bayu Junis Pribadi - IT" class="white-btn">Download My CV</a><br>
+							<a href="assets/img/CV_Bayu Junis Pribadi - QA.pdf" download="CV - Bayu Junis Pribadi" class="white-btn">Download My CV</a><br>
 							<h2><a href="https://github.com/bayujunisp" class="white-btn"><i class="fa fa-github"></i></a></h2>
 
 						</div>
@@ -154,6 +154,13 @@
 
 						</div>
 						<div class="row" style="margin-top: 20px;">
+							<div class="col-xs-1">Automation Testing</div>
+							<div class="col-xs-1">:</div>
+							<div class="col-xs-9"><div class="kotak"><div class="mysql"></div></div></div>
+							<div class="col-xs-1">100%</div>
+
+						</div>
+						<div class="row" style="margin-top: 20px;">
 							<div class="col-xs-1">Database</div>
 							<div class="col-xs-1">:</div>
 							<div class="col-xs-9"><div class="kotak"><div class="html"></div></div></div>
@@ -169,6 +176,13 @@
 						</div>
 						<div class="row" style="margin-top: 20px;">
 							<div class="col-xs-1">Java</div>
+							<div class="col-xs-1">:</div>
+							<div class="col-xs-9"><div class="kotak"><div class="php"></div></div></div>
+							<div class="col-xs-1">60%</div>
+
+						</div>
+						<div class="row" style="margin-top: 20px;">
+							<div class="col-xs-1">Python</div>
 							<div class="col-xs-1">:</div>
 							<div class="col-xs-9"><div class="kotak"><div class="php"></div></div></div>
 							<div class="col-xs-1">60%</div>
@@ -288,37 +302,8 @@
 					</div>
 					<!-- /Section header -->
 
-					<!-- blog -->
-					<div class="col-md-3 col-xs-3 work">
-						<div class="blog">
-							<div class="blog-img">
-								<img class="img-responsive" src="assets/img/sd.png" alt="">
-							</div>
-							<div class="blog-content">
+					<div class="col-md-3 col-xs-3 work"></div>
 
-								<h3>SDS Sekar Adi</h3>
-								<p>2004 - 2010.</p>
-								<p></p>
-							</div>
-						</div>
-					</div>
-					<!-- /blog -->
-					<!-- blog -->
-					<div class="col-md-3 col-xs-3 work">
-						<div class="blog">
-							<div class="blog-img">
-								<img class="img-responsive" src="assets/img/cinus.png" alt="">
-							</div>
-							<div class="blog-content">
-
-								<h3>SMP Citra Nusa</h3>
-								<p>2010 - 2013.</p>
-								<p></p>
-
-							</div>
-						</div>
-					</div>
-					<!-- /blog -->
 					<!-- blog -->
 					<div class="col-md-3 col-xs-3 work">
 						<div class="blog">
@@ -328,8 +313,8 @@
 							<div class="blog-content">
 
 								<h3>SMKN 1 Cibinong</h3>
-								<p>Software Engineering Class.</p>
-								<p>2013 - 2016.</p>
+								<p>Software Engineering</p>
+								<p>2013 - 2016</p>
 
 							</div>
 						</div>
@@ -346,11 +331,12 @@
 
 								<h3>Universitas Pakuan</h3>
 								<p>Computer Science.</p>
-								<p>2016 - Now.</p>
+								<p>2016 - 2020</p>
 							</div>
 						</div>
 					</div>
 					<!-- /blog -->
+					<div class="col-md-3 col-xs-3 work"></div>
 
 				</div>
 				<!-- /Row -->
@@ -375,8 +361,21 @@
 				</div>
 				<!-- /Section header -->
 
-				<!-- Work -->
 				<div class="col-md-6 col-xs-6 work">
+					<img class="img-responsive" src="assets/img/vetavora.PNG" alt="">
+					<div class="overlay"></div>
+					<div class="work-content">
+						<span>Vetavora.com</span>
+						<h3>Vet Management And Marketing</h3>
+						<div class="work-link">
+							<a href="https://vetavora.com/" title="Visit" target="_blank"><i class="fa fa-binoculars"></i></a>
+							<a class="lightbox" href="assets/img/vetavora.PNG" title="See Picture"><i class="fa fa-image"></i></a>
+						</div>
+					</div>
+				</div>
+
+				<!-- Work -->
+				<!-- <div class="col-md-6 col-xs-6 work">
 					<img class="img-responsive" src="assets/img/smapesat.PNG" alt="">
 					<div class="overlay"></div>
 					<div class="work-content">
@@ -387,7 +386,7 @@
 							<a class="lightbox" href="assets/img/smapesat.PNG" title="See Picture"><i class="fa fa-image"></i></a>
 						</div>
 					</div>
-				</div>
+				</div> -->
 				<!-- /Work -->
 
 				<!-- Work -->
@@ -398,7 +397,7 @@
 						<span>Berbol.com</span>
 						<h3>Website Berita Bola</h3>
 						<div class="work-link">
-							<a href="https://berbol.000webhostapp.com/" title="Visit"><i class="fa fa-binoculars"></i></a>
+							<a href="https://berbol.000webhostapp.com/" title="Visit" target="_blank"><i class="fa fa-binoculars"></i></a>
 							<a class="lightbox" href="assets/img/berbolui.PNG" title="See Picture"><i class="fa fa-image"></i></a>
 						</div>
 					</div>
@@ -423,7 +422,7 @@
 						<span>improvedknn.000webhostapp.com</span>
 						<h3>Aplikasi Analisis Sentimen Metode Improved-KNN </h3>
 						<div class="work-link">
-							<a href="https://improvedknn.000webhostapp.com/" title="Visit"><i class="fa fa-binoculars"></i></a>
+							<a href="https://improvedknn.000webhostapp.com/" title="Visit" target="_blank"><i class="fa fa-binoculars"></i></a>
 							<a class="lightbox" href="assets/img/improvedknn.PNG" title="See Picture"><i class="fa fa-image"></i></a>
 						</div>
 					</div>
@@ -438,7 +437,7 @@
 						<span>puskesmasbogor.000webhostapp.com</span>
 						<h3>Website Info Puskesmas Bogor</h3>
 						<div class="work-link">
-							<a href="https://puskesmasbogor.000webhostapp.com/" title="Visit"><i class="fa fa-binoculars"></i></a>
+							<a href="https://puskesmasbogor.000webhostapp.com/" title="Visit" target="_blank"><i class="fa fa-binoculars"></i></a>
 							<a class="lightbox" href="assets/img/locationpuskesmas.PNG" title="See Picture"><i class="fa fa-image"></i></a>
 						</div>
 					</div>
