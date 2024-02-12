@@ -38,9 +38,38 @@
         <div></div>
       </div>
       <div class="text">
-        <h2></h2> Yeayy Happy Valentine Rika!, got you this Rose because your smile is as beautiful as Rose <br /> 
-       I have Something For your Smile : <a href="here.html">Click Here</a></h2>
+        <h2></h2> Yeayy Happy Valentine Rika, Got You this virtual rose because it's beautiful as Your smile! <br /> 
+       <!-- I have Something For your Smile : <a href="here.html">Click Here</a> --></h2>
+       <p><span id="seconds">7</span></p>
       </div>
     </div>
   </body>
 </html>
+
+<script type="text/javascript">
+  // Countdown timer for redirecting to another URL after several seconds
+
+var seconds = 7; // seconds for HTML
+var foo; // variable for clearInterval() function
+
+function redirect() {
+    document.location.href = 'here.html';
+}
+
+function updateSecs() {
+    document.getElementById("seconds").innerHTML = seconds;
+    seconds--;
+    if (seconds == -1) {
+        clearInterval(foo);
+        redirect();
+    }
+}
+
+function countdownTimer() {
+    foo = setInterval(function () {
+        updateSecs()
+    }, 1000);
+}
+
+countdownTimer();
+</script>
