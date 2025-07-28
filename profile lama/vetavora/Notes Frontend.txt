@@ -1,0 +1,37 @@
+Web dgn fitur :
+1. Homepage nya terdiri dari dgn beragam feed flyer jualan Webinar / Seminar & Produk Kedokteran Hewan yang tertera klik untuk pesan & sisa quantity nya
+2. Dari tombol pesan customer diarahkan ke gform pemesan
+3. Ada layanan pelanggan (CS) yang diarahkan ke lama WA no admin
+4. Website yang bisa melakukan send email oleh admin ke email peserta daftar per event, yang pasti email itu masuk ke inbox peserta
+5. Fitur yg ada automatic post management dimana postingan admin lebih dr 1 bulan lalu akan hilang di homepage
+Tampilan homepage akan menampilan 15 - 25 produk (boleh dibuat 4 - 5 page)
+
+Tidak perlu seperti e-commerce jadi hanya bisa klik pesan lalu diarahkan ke gform
+
+Nah di web ini ada bagian artikel , di vetavora.id nanti diganti ke tampilan Flyer event yg akan dijual , diupdate berkala dgn post management , jadi kalo sudah lewat 1 bulan sebelumnya akan hilang
+
+Nah gw cuma jualan 3 kategori : Webinar, Seminar , Vet Needs . Ketika 1 flyer webinar ada button buat daftar , lalu peserta akan diarahkan mengisi link pendaftaran gform bit.ly, diberikan jumlah limited seat di sebelah button Daftar , semua flat 40 seat , setiap ada yg submit daftar maka akan countdown automatic dr jumlah awal
+
+
+Nama Project
+- Vetavora.id
+
+Referensi
+https://halovet.id/
+
+Frontend
+- Homepage
+terdiri dari dgn beragam feed flyer jualan Webinar / Seminar & Produk Kedokteran Hewan yang tertera klik untuk pesan & sisa quantity nya
+
+- Login
+login member
+- Register
+Register member
+- article
+list article, kemudian detail article
+- Webinar
+list webinar, kemudian detail webinar
+
+- Kelas
+warna tema
+-  Putih ungu gold(co warna ada di gambar)
