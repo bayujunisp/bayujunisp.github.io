@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-ar">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Testing Practice Space</title>
+    <style>
+        body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;margin:0;display:flex;height:100vh;background-color:#f0f2f5;color:#333}
+        /* Updated color scheme */
+        .sidebar{width:250px;background-color:#2c3e50;color:#ecf0f1;padding:20px;display:flex;flex-direction:column;justify-content:space-between;flex-shrink:0}
+        .sidebar h2{color:#fff;text-align:center;border-bottom:2px solid #00587b;padding-bottom:10px;margin:0 0 20px 0}
+        .sidebar-menu{list-style:none;padding:0;margin:0}
+        .sidebar-menu li a{display:block;padding:15px 20px;cursor:pointer;border-radius:5px;transition:background-color .3s,color .3s;margin-bottom:10px;color:#ecf0f1;text-decoration:none}
+        .sidebar-menu li a:hover{background-color:#34495e}
+        .sidebar-menu li a.active{background-color:#00587b;color:#fff;font-weight:700}
+        .back-button{display:block;text-align:center;padding:15px;border-radius:5px;background-color:#34495e;color:#ecf0f1;text-decoration:none;font-weight:700;margin-top:20px;transition:background-color .3s}
+        .back-button:hover{background-color:#49637c}
+        .main-content{flex-grow:1;padding:20px;overflow-y:auto}
+        .view{display:none}
+        .view.active{display:block}
+        .two-column-layout{display:flex;gap:20px}
+        .code-container,.interaction-container{flex:1;padding:25px;background-color:#fff;border-radius:8px;box-shadow:0 2px 10px rgba(0,0,0,.08)}
+        h3{border-bottom:2px solid #00587b;padding-bottom:10px;margin-top:0}
+        pre{background-color:#2d2d2d;color:#ccc;padding:15px;border-radius:5px;white-space:pre-wrap;word-wrap:break-word;font-family:'Courier New',Courier,monospace}
+        .form-group{margin-bottom:15px}
+        label{display:block;margin-bottom:5px;font-weight:700}
+        input[type=text],input[type=email]{width:100%;padding:10px;border:1px solid #ddd;border-radius:4px;box-sizing:border-box}
+        button{width:100%;padding:12px 15px;background-color:#00587b;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:16px;transition:background-color .3s}
+        button:hover{background-color:#00425e}
+        .response-area{margin-top:20px;padding:20px;background-color:#f8f9fa;border-radius:8px}
+        .response-area pre{background-color:#fff;border:1px solid #eee}
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <div>
+            <h2>Practice Api Automation</h2>
+            <ul class="sidebar-menu" id="sidebarMenu">
+                <li><a href="#single-request">1. Single API Request</a></li>
+                <li><a href="#loop-request">2. Looping API Requests</a></li>
+            </ul>
+        </div>
+        <div>
+            <a href="index.html" class="back-button">← Back to Home</a>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div id="single-request" class="view">
+            <div class="two-column-layout">
+                <div class="code-container">
+                    <h3>Python `requests` Code</h3>
+                    <p>Use this code to make a POST request to your local <code>api.php</code> script.</p>
+                    <pre><code>import requests
+
+# The URL of your local PHP API
+url = 'https://bayujunisp.github.io/practice/api.php'
+
+# --- Case 1: Successful Request ---
+success_payload = {
+    'id': '123',
+    'name': 'John Doe',
+    'email': 'john.doe@example.com'
+}
+response = requests.post(url, data=success_payload)
+print(f"Status Code: {response.status_code}")
+print("Response JSON:", response.json())
+
+
+# --- Case 2: Failed Request (missing 'email') ---
+# failed_payload = {
+#     'id': '456',
+#     'name': 'Jane Smith'
+# }
+# response = requests.post(url, data=failed_payload)
+# print(f"Status Code: {response.status_code}")
+# print("Response JSON:", response.json())
+</code></pre>
+                </div>
+                <div class="interaction-container">
+                    <h3>Live API Tester</h3>
+                    <form id="api-form">
+                        <div class="form-group">
+                            <label for="api-id">ID</label>
+                            <input type="text" id="api-id" name="id" value="123">
+                        </div>
+                        <div class="form-group">
+                            <label for="api-name">Name</label>
+                            <input type="text" id="api-name" name="name" value="John Doe">
+                        </div>
+                        <div class="form-group">
+                            <label for="api-email">Email</label>
+                            <input type="email" id="api-email" name="email" value="john.doe@example.com">
+                        </div>
+                        <button type="submit">Send POST Request</button>
+                    </form>
+                </div>
+            </div>
+            <div class="response-area">
+                <div class="two-column-layout">
+                    <div>
+                        <h4>Expected Success Response (200 OK)</h4>
+                        <pre id="success-response-display">{
+    "status": "success",
+    "message": "Data received successfully.",
+    "data": {
+        "id": "123",
+        "name": "John Doe",
+        "email": "john.doe@example.com"
+    }
+}</pre>
+                    </div>
+                    <div>
+                        <h4>Expected Failed Response (400 Bad Request)</h4>
+                        <pre id="failure-response-display">{
+    "status": "error",
+    "message": "Missing required fields: email"
+}</pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="loop-request" class="view">
+            <div class="two-column-layout">
+                <div class="code-container">
+                    <h3>Python `requests` in a Loop</h3>
+                    <p>Send multiple requests by iterating through a list of data.</p>
+                    <pre><code>import requests
+
+url = 'https://bayujunisp.github.io/practice/api.php'
+
+users_to_add = [
+    {'id': '101', 'name': 'Alice', 'email': 'alice@example.com'},
+    {'id': '102', 'name': 'Bob', 'email': 'bob@example.com'},
+    {'id': '103', 'name': 'Charlie', 'email': 'charlie@example.com'},
+    {'id': '104', 'name': 'Diana'} # This one will fail
+]
+
+for user in users_to_add:
+    print(f"--- Sending data for {user.get('name', 'N/A')} ---")
+    response = requests.post(url, data=user)
+    print(f"Status: {response.status_code}")
+    print(f"Response: {response.json()}\n")
+</code></pre>
+                </div>
+                <div class="interaction-container">
+                    <h3>Live Loop Tester</h3>
+                    <p>Click the button below to send 4 API requests in a sequence (the last one is designed to fail).</p>
+                    <button id="send-loop-request-btn">Send 4 Requests in a Loop</button>
+                </div>
+            </div>
+            <div class="response-area">
+                <h4>API Responses</h4>
+                <pre id="loop-response-display">Click the button to see the responses...</pre>
+            </div>
+        </div>
+    </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const API_URL = 'api.php'; // Change this if your PHP file is in a different location
+
+    // --- Hash-based view switching logic ---
+    const menuLinks = document.querySelectorAll('.sidebar-menu a');
+    const views = document.querySelectorAll('.main-content .view');
+    function showViewFromHash() {
+        const hash = window.location.hash || '#single-request';
+        const targetViewId = hash.substring(1); 
+        views.forEach(view => view.classList.toggle('active', view.id === targetViewId));
+        menuLinks.forEach(link => link.classList.toggle('active', link.getAttribute('href') === hash));
+    }
+    window.addEventListener('hashchange', showViewFromHash);
+    showViewFromHash();
+
+    // --- Single API Request Logic ---
+    const apiForm = document.getElementById('api-form');
+    const successDisplay = document.getElementById('success-response-display');
+    const failureDisplay = document.getElementById('failure-response-display');
+
+    apiForm.addEventListener('submit', async function(event) {
+        event.preventDefault();
+        const formData = new FormData(apiForm);
+        
+        try {
+            const response = await fetch(API_URL, {
+                method: 'POST',
+                body: formData
+            });
+
+            const responseData = await response.json();
+            const formattedJson = JSON.stringify(responseData, null, 4);
+
+            if (response.ok) {
+                successDisplay.textContent = formattedJson;
+                failureDisplay.textContent = '...'; // Clear failure display
+            } else {
+                failureDisplay.textContent = formattedJson;
+                successDisplay.textContent = '...'; // Clear success display
+            }
+
+        } catch (error) {
+            failureDisplay.textContent = `Network Error: ${error.message}`;
+        }
+    });
+
+    // --- Looping API Request Logic ---
+    const loopBtn = document.getElementById('send-loop-request-btn');
+    const loopDisplay = document.getElementById('loop-response-display');
+
+    loopBtn.addEventListener('click', async function() {
+        const users = [
+            {id: '101', name: 'Alice', email: 'alice@example.com'},
+            {id: '102', name: 'Bob', email: 'bob@example.com'},
+            {id: '103', name: 'Charlie', email: 'charlie@example.com'},
+            {id: '104', name: 'Diana'} // Fails, missing email
+        ];
+        
+        loopDisplay.textContent = 'Sending requests...\n\n';
+        
+        for (const user of users) {
+            const formData = new FormData();
+            for (const key in user) {
+                formData.append(key, user[key]);
+            }
+            
+            loopDisplay.textContent += `--- Sending data for ${user.name} ---\n`;
+            
+            try {
+                const response = await fetch(API_URL, {
+                    method: 'POST',
+                    body: formData
+                });
+                const responseData = await response.json();
+                loopDisplay.textContent += `Status: ${response.status}\n`;
+                loopDisplay.textContent += `Response: ${JSON.stringify(responseData)}\n\n`;
+            } catch (error) {
+                loopDisplay.textContent += `Network Error: ${error.message}\n\n`;
+            }
+        }
+    });
+});
+</script>
+</body>
+</html>
