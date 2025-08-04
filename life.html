@@ -50,11 +50,11 @@
               <li><a href="lectures/programming.html">Programming</a></li>
             </ul>
           </li>
-          <li><a href="research.html" class="active">Research</a></li>
+          <li><a href="research.html">Research</a></li>
           <li><a href="practice/index.html">Practice</a></li>
           <li><a href="aboutme.html">About Me</a></li>
           <li><a href="work.html">Works</a></li>
-          <li><a href="life.html">Life</a></li>
+          <li><a href="life.html" class="active">Life</a></li>
          
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
@@ -70,7 +70,7 @@
     <section id="articles" class="services section">
  <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Research</h2>
+        <h2>Life</h2>
         <div class="title-shape">
           <svg viewBox="0 0 200 20" xmlns="http://www.w3.org/2000/svg">
             <path d="M 0,10 C 40,0 60,20 100,10 C 140,0 160,20 200,10" fill="none" stroke="currentColor" stroke-width="2"></path>
@@ -109,7 +109,7 @@
 
       if (!appendOnlyNew) container.innerHTML = "";
 
-      const filteredPosts = posts.filter(post => post.title.includes("Research :"));
+      const filteredPosts = posts.filter(post => post.title.includes("life :"));
 
       filteredPosts.forEach((post, index) => {
         if (appendOnlyNew && post.guid === latestPostGuid) return;
