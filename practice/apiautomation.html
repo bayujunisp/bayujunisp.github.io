@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-ar">
+    <link href="../assets/img/bjp/logo text biru muda background png.png" rel="icon">
+    <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>API Testing Practice Space</title>
+    <title>API Automation Practice</title>
     <style>
         body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;margin:0;display:flex;height:100vh;background-color:#f0f2f5;color:#333}
         /* Updated color scheme */
@@ -34,7 +36,7 @@
 <body>
     <div class="sidebar">
         <div>
-            <h2>Practice Api Automation</h2>
+            <h2>Api Automation Practice</h2>
             <ul class="sidebar-menu" id="sidebarMenu">
                 <li><a href="#single-request">1. Single API Request</a></li>
                 <li><a href="#loop-request">2. Looping API Requests</a></li>
@@ -50,11 +52,11 @@
             <div class="two-column-layout">
                 <div class="code-container">
                     <h3>Python `requests` Code</h3>
-                    <p>Use this code to make a POST request to your local <code>api.php</code> script.</p>
+                    <p>The Python code below calls a real API. The "Live Tester" on the right **simulates** this API's response directly in your browser.</p>
                     <pre><code>import requests
 
-# The URL of your local PHP API
-url = 'https://bayujunisp.github.io/practice/api.php'
+# This URL would point to a real server-side script
+url = 'http://example.com/api.php'
 
 # --- Case 1: Successful Request ---
 success_payload = {
@@ -78,7 +80,7 @@ print("Response JSON:", response.json())
 </code></pre>
                 </div>
                 <div class="interaction-container">
-                    <h3>Live API Tester</h3>
+                    <h3>Live API Tester (Simulated)</h3>
                     <form id="api-form">
                         <div class="form-group">
                             <label for="api-id">ID</label>
@@ -99,7 +101,7 @@ print("Response JSON:", response.json())
             <div class="response-area">
                 <div class="two-column-layout">
                     <div>
-                        <h4>Expected Success Response (200 OK)</h4>
+                        <h4>Success Response</h4>
                         <pre id="success-response-display">{
     "status": "success",
     "message": "Data received successfully.",
@@ -111,7 +113,7 @@ print("Response JSON:", response.json())
 }</pre>
                     </div>
                     <div>
-                        <h4>Expected Failed Response (400 Bad Request)</h4>
+                        <h4>Failed Response</h4>
                         <pre id="failure-response-display">{
     "status": "error",
     "message": "Missing required fields: email"
@@ -125,10 +127,10 @@ print("Response JSON:", response.json())
             <div class="two-column-layout">
                 <div class="code-container">
                     <h3>Python `requests` in a Loop</h3>
-                    <p>Send multiple requests by iterating through a list of data.</p>
+                    <p>This Python code calls a real API in a loop. The "Live Tester" on the right simulates this behavior.</p>
                     <pre><code>import requests
 
-url = 'https://bayujunisp.github.io/practice/api.php'
+url = 'http://example.com/api.php'
 
 users_to_add = [
     {'id': '101', 'name': 'Alice', 'email': 'alice@example.com'},
@@ -145,7 +147,7 @@ for user in users_to_add:
 </code></pre>
                 </div>
                 <div class="interaction-container">
-                    <h3>Live Loop Tester</h3>
+                    <h3>Live Loop Tester (Simulated)</h3>
                     <p>Click the button below to send 4 API requests in a sequence (the last one is designed to fail).</p>
                     <button id="send-loop-request-btn">Send 4 Requests in a Loop</button>
                 </div>
@@ -159,7 +161,49 @@ for user in users_to_add:
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    const API_URL = 'api.php'; // Change this if your PHP file is in a different location
+    
+    /**
+     * API SIMULATION FUNCTION
+     * This function mimics the logic of an API file. It replaces the need for a server.
+     */
+    async function simulateApiRequest(formData) {
+        // Simulate network latency with a 500ms delay
+        return new Promise(resolve => {
+            setTimeout(() => {
+                const id = formData.get('id');
+                const name = formData.get('name');
+                const email = formData.get('email');
+
+                let missing_fields = [];
+                if (!id) missing_fields.push('id');
+                if (!name) missing_fields.push('name');
+                if (!email) missing_fields.push('email');
+
+                if (missing_fields.length > 0) {
+                    // Simulate a 400 Bad Request error response
+                    resolve({
+                        ok: false,
+                        status: 400,
+                        json: () => Promise.resolve({
+                            status: 'error',
+                            message: 'Missing required fields: ' + missing_fields.join(', ')
+                        })
+                    });
+                } else {
+                    // Simulate a 200 OK success response
+                    resolve({
+                        ok: true,
+                        status: 200,
+                        json: () => Promise.resolve({
+                            status: 'success',
+                            message: 'Data received successfully.',
+                            data: { id, name, email }
+                        })
+                    });
+                }
+            }, 500); // 500ms delay
+        });
+    }
 
     // --- Hash-based view switching logic ---
     const menuLinks = document.querySelectorAll('.sidebar-menu a');
@@ -173,7 +217,7 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('hashchange', showViewFromHash);
     showViewFromHash();
 
-    // --- Single API Request Logic ---
+    // --- Single API Request Logic (MODIFIED to use the simulation) ---
     const apiForm = document.getElementById('api-form');
     const successDisplay = document.getElementById('success-response-display');
     const failureDisplay = document.getElementById('failure-response-display');
@@ -182,29 +226,22 @@ document.addEventListener('DOMContentLoaded', function() {
         event.preventDefault();
         const formData = new FormData(apiForm);
         
-        try {
-            const response = await fetch(API_URL, {
-                method: 'POST',
-                body: formData
-            });
+        // Use the simulation function instead of a real network fetch
+        const response = await simulateApiRequest(formData);
+        
+        const responseData = await response.json();
+        const formattedJson = JSON.stringify(responseData, null, 4);
 
-            const responseData = await response.json();
-            const formattedJson = JSON.stringify(responseData, null, 4);
-
-            if (response.ok) {
-                successDisplay.textContent = formattedJson;
-                failureDisplay.textContent = '...'; // Clear failure display
-            } else {
-                failureDisplay.textContent = formattedJson;
-                successDisplay.textContent = '...'; // Clear success display
-            }
-
-        } catch (error) {
-            failureDisplay.textContent = `Network Error: ${error.message}`;
+        if (response.ok) {
+            successDisplay.textContent = formattedJson;
+            failureDisplay.textContent = '...';
+        } else {
+            failureDisplay.textContent = formattedJson;
+            successDisplay.textContent = '...';
         }
     });
 
-    // --- Looping API Request Logic ---
+    // --- Looping API Request Logic (MODIFIED to use the simulation) ---
     const loopBtn = document.getElementById('send-loop-request-btn');
     const loopDisplay = document.getElementById('loop-response-display');
 
@@ -220,23 +257,16 @@ document.addEventListener('DOMContentLoaded', function() {
         
         for (const user of users) {
             const formData = new FormData();
-            for (const key in user) {
-                formData.append(key, user[key]);
-            }
+            for (const key in user) { formData.append(key, user[key]); }
             
-            loopDisplay.textContent += `--- Sending data for ${user.name} ---\n`;
+            loopDisplay.textContent += `--- Sending data for ${user.name || 'N/A'} ---\n`;
             
-            try {
-                const response = await fetch(API_URL, {
-                    method: 'POST',
-                    body: formData
-                });
-                const responseData = await response.json();
-                loopDisplay.textContent += `Status: ${response.status}\n`;
-                loopDisplay.textContent += `Response: ${JSON.stringify(responseData)}\n\n`;
-            } catch (error) {
-                loopDisplay.textContent += `Network Error: ${error.message}\n\n`;
-            }
+            // Use the simulation function instead of a real network fetch
+            const response = await simulateApiRequest(formData);
+
+            const responseData = await response.json();
+            loopDisplay.textContent += `Status: ${response.status}\n`;
+            loopDisplay.textContent += `Response: ${JSON.stringify(responseData)}\n\n`;
         }
     });
 });
