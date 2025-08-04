@@ -131,9 +131,11 @@
 
         postEl.innerHTML = `
           <div class="service-item">
-            <img src="assets/img/portfolio/medium.png" class="img-fluid" alt="" loading="lazy">
-            <h3><a href="${post.link}" target="_blank">${post.title}</a></h3>
-            <p>${plainText.substring(0, 150).trim()}...</p>
+            <a href="${post.link}" target="_blank">
+            <img src="../assets/img/portfolio/medium.png" class="img-fluid" alt="" loading="lazy">
+            <h3>${post.title}</h3>
+            <p>${plainText.substring(0, 100).trim()}...</p>
+            </a>
           </div>
         `;
 
