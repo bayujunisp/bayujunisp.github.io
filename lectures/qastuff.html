@@ -110,11 +110,11 @@
       if (!appendOnlyNew) container.innerHTML = "";
 
       const filteredPosts = posts.filter(post => {
-        const title = post.title.toLowerCase();
+        const title = post.title;
         const tempDiv = document.createElement("div");
         tempDiv.innerHTML = post.content || post.description;
-        const brief = tempDiv.textContent.toLowerCase();
-        return title.includes("QA Stuff") || brief.startsWith("QA Stuff");
+        const brief = tempDiv.textContent;
+        return title.includes("QA Stuff") || brief.includes("QA Stuff");
       });
 
       filteredPosts.forEach((post, index) => {
