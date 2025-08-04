@@ -109,7 +109,7 @@
 
       if (!appendOnlyNew) container.innerHTML = "";
 
-      const filteredPosts = posts.filter(post => post.title.includes("Research :"));
+      const filteredPosts = posts.filter(post => post.title.includes("Research"));
 
       filteredPosts.forEach((post, index) => {
         if (appendOnlyNew && post.guid === latestPostGuid) return;
