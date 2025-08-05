@@ -135,7 +135,7 @@ driver = webdriver.Chrome()
 
 # Navigate directly to the web form view
 # by appending '#web' to the URL
-file_path = "file:///path/to/your/practice_page.html"
+file_path = "https://bayujunisp.github.io/practice/webautomation.html"
 driver.get(file_path + "#web")
 
 # --- Example of a VALID submission ---
@@ -220,7 +220,7 @@ from selenium.webdriver.common.by import By
 csv_file_path=os.path.abspath('users.csv')
 if not os.path.exists(csv_file_path):raise FileNotFoundError("Run generator first!")
 driver=webdriver.Chrome()
-file_path="file:///path/to/your/practice_page.html"
+file_path="https://bayujunisp.github.io/practice/webautomation.html"
 driver.get(file_path + "#upload")
 time.sleep(1)
 file_input=driver.find_element(By.ID, "csv-upload-input")
