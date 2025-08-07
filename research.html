@@ -81,9 +81,8 @@
 <div class="container" data-aos="fade-up" data-aos-delay="100">
   <div class="row align-items-center">
     <div class="col-lg-12">
-      <div class="row g-4" id="medium-posts">
-        <!-- Posts will be injected here -->
-      </div>
+      <div class="row g-4" id="content-container">
+        </div>
     </div>
   </div>
 </div>
@@ -92,74 +91,182 @@
 <script>
   AOS.init();
 
-  let latestPostGuid = null;
+  const GITHUB_USERNAME = "bayujunisp";
+  const MEDIUM_USERNAME = "bayujunisp";
 
-  async function loadMediumPosts(username, appendOnlyNew = false) {
+  /**
+   * Fetches and processes repositories from the GitHub API.
+   */
+  async function fetchGithubRepos(username) {
+    // We use the GitHub API to get public repositories, sorted by the last push date.
+    const apiUrl = `https://api.github.com/users/${username}/repos?sort=pushed&per_page=10`;
+
+    try {
+      const response = await fetch(apiUrl);
+      const repos = await response.json();
+
+      // Filter the repositories based on your rules
+      const filteredRepos = repos.filter(repo => {
+        const description = repo.description || "";
+        const topics = repo.topics || [];
+        const name = repo.name || "";
+
+        const hasUnfinished = description.toLowerCase().includes("unfinished") || topics.includes("unfinished");
+        const isGithubIo = name.toLowerCase().includes("github.io") || name.includes("codeigniter") || name.includes("perpus") || name.includes("Pendaftaran") || name.includes("teman") || name.includes("Perpustakaan") || name.includes("Happy") || name.includes("Apk");
+
+        return !hasUnfinished && !isGithubIo;
+      });
+
+      // Transform the data into a common format for easy sorting and display
+      return filteredRepos.map(repo => ({
+        type: 'github',
+        title: repo.name.replace(/-/g, ' '), // Replace hyphens with spaces for readability
+        link: repo.html_url,
+        description: repo.description || "No description provided.",
+        date: new Date(repo.pushed_at), // Use push date for sorting
+        tags: repo.topics || [], // These are your repository "subjects" or "tags"
+        source: 'GitHub'
+      }));
+    } catch (error) {
+      console.error("Error fetching GitHub repositories:", error);
+      return []; // Return an empty array on error
+    }
+  }
+
+  /**
+   * Fetches and processes posts from a Medium feed via rss2json.
+   */
+  async function fetchMediumPosts(username) {
     const feedUrl = `https://medium.com/feed/@${username}`;
     const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(feedUrl)}`;
 
     try {
       const response = await fetch(apiUrl);
       const data = await response.json();
-      const container = document.getElementById('medium-posts');
-      const posts = data.items;
-
-      if (!posts || posts.length === 0) return;
-      if (appendOnlyNew && posts[0].guid === latestPostGuid) return;
-
-      if (!appendOnlyNew) container.innerHTML = "";
-
+      const posts = data.items || [];
+      
+      // Filter posts where title contains "Research"
       const filteredPosts = posts.filter(post => post.title.includes("Research"));
 
-      filteredPosts.forEach((post, index) => {
-        if (appendOnlyNew && post.guid === latestPostGuid) return;
-
+      // Transform the data into a common format
+      return filteredPosts.map(post => {
+        // Create a temporary element to parse HTML and get plain text for the description
         const tempDiv = document.createElement("div");
         tempDiv.innerHTML = post.content || post.description;
         const plainText = tempDiv.textContent || tempDiv.innerText || "";
-
-        const postEl = document.createElement("div");
-        postEl.className = "col-md-4";
-        postEl.setAttribute("data-aos", "fade-up");
-        postEl.setAttribute("data-aos-delay", 200 * (index + 1));
-
-        postEl.innerHTML = `
-          <div class="service-item">
-            <a href="${post.link}" target="_blank">
-            <img src="assets/img/portfolio/medium.png" class="img-fluid" alt="" loading="lazy">
-            <h3>${post.title}</h3>
-            <p>${plainText.substring(0, 100).trim()}...</p>
-            </a>
-          </div>
-        `;
-
-        if (appendOnlyNew) {
-          container.insertBefore(postEl, container.firstChild);
-        } else {
-          container.appendChild(postEl);
-        }
+        
+        return {
+          type: 'medium',
+          title: post.title,
+          link: post.link,
+          description: plainText.substring(0, 100).trim() + "...",
+          date: new Date(post.pubDate), // Use publication date for sorting
+          tags: post.categories || [], // These are your Medium post tags
+          source: 'Medium'
+        };
       });
-
-      if (filteredPosts.length > 0) {
-        latestPostGuid = filteredPosts[0].guid;
-      }
-
-      AOS.refresh(); // Update animations after dynamic insert
     } catch (error) {
       console.error("Error fetching Medium posts:", error);
+      return [];
     }
   }
 
-  // First load
-  loadMediumPosts("bayujunisp");
+  /**
+   * Renders the combined and sorted items to the DOM.
+   */
+  function displayItems(items) {
+    const container = document.getElementById('content-container');
+    container.innerHTML = ""; // Clear previous content
 
-  // Re-fetch every 60 seconds
-  setInterval(() => {
-    loadMediumPosts("bayujunisp", true);
-  }, 30000);
+    items.forEach((item, index) => {
+      const itemEl = document.createElement("div");
+      itemEl.className = "col-md-4"; // Or col-lg-4, as you prefer
+      itemEl.setAttribute("data-aos", "fade-up");
+      itemEl.setAttribute("data-aos-delay", 100 * (index + 1));
+
+      // Choose an icon based on the source (GitHub or Medium)
+      const iconSrc = item.source === 'GitHub' 
+        ? 'assets/img/bjp/github.png' // Make sure you have this image
+        : 'assets/img/portfolio/medium.png';
+
+      // Create the HTML for the tags
+      const tagsHtml = item.tags.map(tag => `<span class="tag">${tag}</span>`).join('');
+
+      itemEl.innerHTML = `
+        <div class="service-item">
+          <a href="${item.link}" target="_blank" rel="noopener noreferrer">
+              <img src="${iconSrc}" class="img-fluid" alt="${item.source} logo" loading="lazy">
+              <h3 class ="fw-bold">${item.title}</h3>
+            <p>${item.description}</p>
+            <div class="tags-container">${tagsHtml}</div>
+          </a>
+        </div>
+      `;
+      container.appendChild(itemEl);
+    });
+
+    AOS.refresh(); // Refresh AOS animations after adding new items
+  }
+
+  /**
+   * Main function to load all content when the page loads.
+   */
+  async function loadAllContent() {
+    // Fetch both sources at the same time for better performance
+    const [githubItems, mediumItems] = await Promise.all([
+      fetchGithubRepos(GITHUB_USERNAME),
+      fetchMediumPosts(MEDIUM_USERNAME)
+    ]);
+
+    // Combine the arrays
+    const combinedItems = [...githubItems, ...mediumItems];
+
+    // Sort the combined array by date, most recent first
+    combinedItems.sort((a, b) => b.date - a.date);
+
+    // Display the final sorted list
+    displayItems(combinedItems);
+  }
+
+  // Load everything when the DOM is ready
+  document.addEventListener("DOMContentLoaded", loadAllContent);
 </script>
 
-    </section><!-- /Services Section -->
+<style>
+  .service-item a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    height: 100%;
+  }
+  .service-item {
+    height: 100%;
+    padding: 20px;
+  }
+  .item-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  .source-icon {
+    width: 32px; /* Adjust size as needed */
+    height: 32px;
+    margin-right: 15px;
+  }
+  .tags-container {
+    margin-top: 15px;
+  }
+  .tag {
+    display: inline-block;
+    background-color: #e9ecef; /* Light grey background */
+    color: #495057; /* Dark grey text */
+    padding: 4px 8px;
+    border-radius: 12px; /* Pill shape */
+    font-size: 0.8em;
+    margin-right: 5px;
+    margin-bottom: 5px;
+  }
+</style>
 
 
   </main>
