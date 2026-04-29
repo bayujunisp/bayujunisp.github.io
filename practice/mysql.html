@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SQL Practice Engine</title>
+
+<style>
+  body {
+    background: #0f172a;
+    color: #e2e8f0;
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+  }
+
+  .container { width: 900px; }
+
+  h1 { text-align: center; margin-bottom: 20px; }
+
+  .card {
+    background: #1e293b;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  }
+
+  textarea {
+    width: 100%;
+    height: 120px;
+    background: #020617;
+    color: #38bdf8;
+    border: none;
+    padding: 15px;
+    border-radius: 10px;
+    font-family: monospace;
+  }
+
+  button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: #38bdf8;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  button:hover { background: #0ea5e9; }
+
+  .back-btn {
+    background: #334155;
+    color: white;
+    margin-bottom: 15px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+
+  th, td {
+    border: 1px solid #334155;
+    padding: 8px;
+  }
+
+  th { background: #020617; }
+
+  .error { color: #f87171; }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<button class="back-btn" onclick="goBack()">⬅ Back to Practice</button>
+
+<h1>💻 SQL Practice Engine</h1>
+
+<div class="card">
+  <h3>📊 users</h3>
+  <div id="usersTable"></div>
+</div>
+
+<div class="card">
+  <h3>📊 orders</h3>
+  <div id="ordersTable"></div>
+</div>
+
+<div class="card">
+  <h3>🧪 Run Query</h3>
+  <textarea id="query" placeholder="SELECT * FROM users WHERE city = 'Bandung'"></textarea>
+  <button onclick="runQuery()">Run Query</button>
+</div>
+
+<div class="card">
+  <h3>📤 Result</h3>
+  <div id="result"></div>
+  <div id="error" class="error"></div>
+</div>
+
+</div>
+
+<script>
+function goBack() {
+  window.location.href = "https://bayujunisp.github.io/practice/index.html";
+}
+
+const users = [
+  { id: 1, name: "Andi", age: 25, city: "Jakarta" },
+  { id: 2, name: "Budi", age: 30, city: "Bandung" },
+  { id: 3, name: "Citra", age: 22, city: "Jakarta" }
+];
+
+const orders = [
+  { id: 1, user_id: 1, total: 100 },
+  { id: 2, user_id: 1, total: 200 },
+  { id: 3, user_id: 2, total: 150 }
+];
+
+function renderTable(data, el) {
+  if (!data.length) {
+    document.getElementById(el).innerHTML = "No data";
+    return;
+  }
+
+  let html = "<table><tr>";
+  Object.keys(data[0]).forEach(k => html += `<th>${k}</th>`);
+  html += "</tr>";
+
+  data.forEach(row => {
+    html += "<tr>";
+    Object.values(row).forEach(v => html += `<td>${v}</td>`);
+    html += "</tr>";
+  });
+
+  html += "</table>";
+  document.getElementById(el).innerHTML = html;
+}
+
+renderTable(users, "usersTable");
+renderTable(orders, "ordersTable");
+
+function runQuery() {
+  const raw = document.getElementById("query").value.trim();
+  const q = raw.toLowerCase();
+
+  const resultDiv = document.getElementById("result");
+  const errorDiv = document.getElementById("error");
+
+  resultDiv.innerHTML = "";
+  errorDiv.innerText = "";
+
+  try {
+    // SELECT USERS
+    if (q.includes("from users")) {
+
+      let data = [...users];
+
+      // WHERE city
+      const whereMatch = raw.match(/where\s+city\s*=\s*'([^']+)'/i);
+      if (whereMatch) {
+        const city = whereMatch[1];
+        data = data.filter(u => u.city.toLowerCase() === city.toLowerCase());
+      }
+
+      // ORDER BY
+      if (q.includes("order by age desc")) {
+        data.sort((a,b)=>b.age-a.age);
+      }
+
+      // LIMIT
+      const limitMatch = raw.match(/limit\s+(\d+)/i);
+      if (limitMatch) {
+        data = data.slice(0, parseInt(limitMatch[1]));
+      }
+
+      renderTable(data, "result");
+    }
+
+    // GROUP BY orders
+    else if (q.includes("from orders") && q.includes("group by")) {
+      const map = {};
+      orders.forEach(o => {
+        map[o.user_id] = (map[o.user_id] || 0) + o.total;
+      });
+
+      const result = Object.keys(map).map(id => ({
+        user_id: id,
+        total_belanja: map[id]
+      }));
+
+      renderTable(result, "result");
+    }
+
+    // JOIN
+    else if (q.includes("join")) {
+      const result = users.map(u => {
+        const total = orders
+          .filter(o => o.user_id === u.id)
+          .reduce((a,b)=>a+b.total,0);
+
+        return { name: u.name, total_belanja: total };
+      });
+
+      renderTable(result, "result");
+    }
+
+    // SUBQUERY
+    else if (q.includes("limit 1") && q.includes("sum")) {
+      const totals = {};
+      orders.forEach(o => {
+        totals[o.user_id] = (totals[o.user_id] || 0) + o.total;
+      });
+
+      const max = Object.entries(totals).sort((a,b)=>b[1]-a[1])[0][0];
+      const user = users.find(u => u.id == max);
+
+      renderTable([user], "result");
+    }
+
+    else {
+      throw "❌ Query tidak valid atau belum didukung";
+    }
+
+  } catch (err) {
+    errorDiv.innerText = err;
+  }
+}
+</script>
+
+</body>
+</html>
