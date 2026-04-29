@@ -70,7 +70,6 @@
 
   .error { color: #f87171; }
 </style>
-<script src="https://cdn.jsdelivr.net/npm/alasql@1.7/dist/alasql.min.js"></script>
 </head>
 
 <body>
@@ -110,7 +109,6 @@ function goBack() {
   window.location.href = "https://bayujunisp.github.io/practice/index.html";
 }
 
-// ================= DATA =================
 const users = [
   { id: 1, name: "Andi", age: 25, city: "Jakarta" },
   { id: 2, name: "Budi", age: 30, city: "Bandung" },
@@ -123,12 +121,9 @@ const orders = [
   { id: 3, user_id: 2, total: 150 }
 ];
 
-// ================= RENDER =================
 function renderTable(data, el) {
-  const container = document.getElementById(el);
-
-  if (!data || data.length === 0) {
-    container.innerHTML = "No data";
+  if (!data.length) {
+    document.getElementById(el).innerHTML = "No data";
     return;
   }
 
@@ -143,32 +138,15 @@ function renderTable(data, el) {
   });
 
   html += "</table>";
-  container.innerHTML = html;
+  document.getElementById(el).innerHTML = html;
 }
 
-window.onload = () => {
-  renderTable(users, "usersTable");
-  renderTable(orders, "ordersTable");
+renderTable(users, "usersTable");
+renderTable(orders, "ordersTable");
 
-  // register ke engine SQL
-  alasql("CREATE TABLE users");
-  alasql("CREATE TABLE orders");
-
-  alasql.tables.users.data = users;
-  alasql.tables.orders.data = orders;
-};
-
-// ================= NORMALIZE =================
-function normalize(q) {
-  return q
-    .replace(/select\*/ig, "SELECT * ")
-    .replace(/\*from/ig, "* FROM ")
-    .trim();
-}
-
-// ================= MAIN =================
 function runQuery() {
-  const raw = document.getElementById("query").value;
+  const raw = document.getElementById("query").value.trim();
+  const q = raw.toLowerCase();
 
   const resultDiv = document.getElementById("result");
   const errorDiv = document.getElementById("error");
@@ -177,14 +155,79 @@ function runQuery() {
   errorDiv.innerText = "";
 
   try {
-    const query = normalize(raw);
+    // SELECT USERS
+    if (q.includes("from users")) {
 
-    const result = alasql(query);
+      let data = [...users];
 
-    renderTable(result, "result");
+      // WHERE city
+      const whereMatch = raw.match(/where\s+city\s*=\s*'([^']+)'/i);
+      if (whereMatch) {
+        const city = whereMatch[1];
+        data = data.filter(u => u.city.toLowerCase() === city.toLowerCase());
+      }
+
+      // ORDER BY
+      if (q.includes("order by age desc")) {
+        data.sort((a,b)=>b.age-a.age);
+      }
+
+      // LIMIT
+      const limitMatch = raw.match(/limit\s+(\d+)/i);
+      if (limitMatch) {
+        data = data.slice(0, parseInt(limitMatch[1]));
+      }
+
+      renderTable(data, "result");
+    }
+
+    // GROUP BY orders
+    else if (q.includes("from orders") && q.includes("group by")) {
+      const map = {};
+      orders.forEach(o => {
+        map[o.user_id] = (map[o.user_id] || 0) + o.total;
+      });
+
+      const result = Object.keys(map).map(id => ({
+        user_id: id,
+        total_belanja: map[id]
+      }));
+
+      renderTable(result, "result");
+    }
+
+    // JOIN
+    else if (q.includes("join")) {
+      const result = users.map(u => {
+        const total = orders
+          .filter(o => o.user_id === u.id)
+          .reduce((a,b)=>a+b.total,0);
+
+        return { name: u.name, total_belanja: total };
+      });
+
+      renderTable(result, "result");
+    }
+
+    // SUBQUERY
+    else if (q.includes("limit 1") && q.includes("sum")) {
+      const totals = {};
+      orders.forEach(o => {
+        totals[o.user_id] = (totals[o.user_id] || 0) + o.total;
+      });
+
+      const max = Object.entries(totals).sort((a,b)=>b[1]-a[1])[0][0];
+      const user = users.find(u => u.id == max);
+
+      renderTable([user], "result");
+    }
+
+    else {
+      throw "❌ Query tidak valid atau belum didukung";
+    }
 
   } catch (err) {
-    errorDiv.innerText = "❌ " + err.message;
+    errorDiv.innerText = err;
   }
 }
 </script>
